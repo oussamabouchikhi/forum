@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// [wildcard routing] any: anything we'll be passing, ?: optional
+Route::get('/{any?}', function () {
     return view('welcome');
 });
 

@@ -101,7 +101,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    showTitle: function showTitle() {
+      return this.$store.getters.showTitle;
+    }
+  }
+});
 
 /***/ }),
 
@@ -607,18 +613,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", { staticClass: "text-3xl" }, [_vm._v(" " + _vm._s(_vm.showTitle))])
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("h1", { staticClass: "text-3xl" }, [_vm._v("Home page")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -16810,6 +16809,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _routes_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./routes/index */ "./resources/js/routes/index.js");
+/* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store/index */ "./resources/js/store/index.js");
+
 
 
 
@@ -16818,7 +16819,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_2__["default"]);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
-  router: new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"](_routes_index__WEBPACK_IMPORTED_MODULE_3__["default"])
+  router: new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"](_routes_index__WEBPACK_IMPORTED_MODULE_3__["default"]),
+  store: new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store(_store_index__WEBPACK_IMPORTED_MODULE_5__["default"])
 });
 
 /***/ }),
@@ -16985,6 +16987,29 @@ __webpack_require__.r(__webpack_exports__);
     component: _components_Test_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     name: 'test'
   }]
+});
+
+/***/ }),
+
+/***/ "./resources/js/store/index.js":
+/*!*************************************!*\
+  !*** ./resources/js/store/index.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// Make sure to call Vue.use(Vuex) first if using a module system
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: {
+    title: 'Forum with Laravel & VueJs'
+  },
+  getters: {
+    showTitle: function showTitle(state) {
+      return state.title;
+    }
+  }
 });
 
 /***/ }),
