@@ -5,7 +5,7 @@ Forum website made using Laravel 7
 ```.env``` 
 >__notes:__ 
 >1. You need first to create github & facebook applications to get  these info
->2. Facebook callback url must be https
+>2. Facebook callback url must be https when you configure your app
 ```
 GITHUB_CLIENT_ID=your_github_client_id
 GITHUB_CLIENT_SECRET=your_github_client_secret
@@ -13,7 +13,7 @@ GITHUB_CALLBACK=http://localhost:8000/login/github/callback
 
 FACEBOOK_APP_ID=your_facebook_app_id
 FACEBOOK_APP_SECRET=your_facebook_app_secret
-FACEBOOK_CALLBACK=https://localhost:8000/login/facebook/callback
+FACEBOOK_CALLBACK=http://localhost:8000/login/facebook/callback
 ```
 ```config/services.php```
 ```
