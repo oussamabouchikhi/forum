@@ -17000,7 +17000,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-// Make sure to call Vue.use(Vuex) first if using a module system
 /* harmony default export */ __webpack_exports__["default"] = ({
   state: {
     title: 'Forum with Laravel & VueJs'
