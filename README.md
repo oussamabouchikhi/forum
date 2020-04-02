@@ -2,6 +2,9 @@
 Forum website made using Laravel 7
 
 ## Usage
+
+Create a database named ```forum``` or name it as you like but don't forget to edit it in ```.env``` file ```DB_DATABASE=your_database_name```
+
 ```.env``` 
 >__notes:__ 
 >1. You need first to create github & facebook applications to get  these info
