@@ -13,15 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
 // [wildcard routing] any: anything we'll be passing, ?: optional
 Route::get('/{any?}', function () {
     return view('welcome');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
