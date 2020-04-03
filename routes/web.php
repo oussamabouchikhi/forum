@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-
 // Socialite Authentication routes
 Route::get('login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
