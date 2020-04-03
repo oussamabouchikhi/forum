@@ -1,6 +1,12 @@
 # Forum
 Forum website made using Laravel 7
 
+## Tools & Languages
+- [jwt-auth](https://github.com/tymondesigns/jwt-auth)
+- [tailwindcss](https://github.com/laravel-frontend-presets/tailwindcss)
+- [VueJs](https://vuejs.org/v2/guide/)
+- [VSCode](https://code.visualstudio.com/)
+
 ## Usage
 
 Create a database named ```forum``` or name it as you like but don't forget to edit it in ```.env``` file ```DB_DATABASE=your_database_name```
