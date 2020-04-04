@@ -2,10 +2,11 @@
 Forum website made using Laravel 7
 
 ## Tools & Languages
-- [jwt-auth](https://github.com/tymondesigns/jwt-auth)
-- [tailwindcss](https://github.com/laravel-frontend-presets/tailwindcss)
-- [VueJs](https://vuejs.org/v2/guide/)
-- [VSCode](https://code.visualstudio.com/)
+- [tailwindcss](https://github.com/laravel-frontend-presets/tailwindcss) as css lybrary instead of Bootstrap
+- [VueJs](https://vuejs.org/v2/guide/) the javascript framework choosed for the frontend
+- [Vuex](https://vuex.vuejs.org/) & [Vue Router](https://router.vuejs.org/) for making the project a Single Page Application (SPA)
+- [jwt-auth](https://github.com/tymondesigns/jwt-auth) Authentication system
+- [VSCode](https://code.visualstudio.com/) as a text editor
 
 ## Usage
 
