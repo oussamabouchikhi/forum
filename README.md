@@ -6,9 +6,31 @@ Forum website made using Laravel 7
 - [VueJs](https://vuejs.org/v2/guide/) the javascript framework choosed for the frontend
 - [Vuex](https://vuex.vuejs.org/) & [Vue Router](https://router.vuejs.org/) for making the project a Single Page Application (SPA)
 - [jwt-auth](https://github.com/tymondesigns/jwt-auth) Authentication system
+- [js-cookie](https://github.com/js-cookie/js-cookie) for saving the user authentication token in cookies
 - [VSCode](https://code.visualstudio.com/) as a text editor
 
 ## Usage
+
+``` bash
+# 1. clone the repo
+$ git clone https://github.com/oussamabouchikhi/forum.git
+
+# 2. Go to app's directory
+$ cd forum/
+
+# 3. Install dependencies
+npm install
+composer install
+
+# 4. Rename .env.example file to .env
+
+# 5. Generate key
+php artisan key:generate
+
+# 6. serve project
+php artisan serve
+
+```
 
 Create a database named ```forum``` or name it as you like but don't forget to edit it in ```.env``` file ```DB_DATABASE=your_database_name```
 
