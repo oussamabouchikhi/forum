@@ -20,8 +20,8 @@
         <!-- use router-link component for navigation. -->
         <!-- specify the link by passing the `to` prop. -->
         <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
-        <router-link :to="{name: 'home'}">Go to Home</router-link>
-        <router-link :to="{name: 'test'}">Go to Test</router-link>
+        <router-link :to="{name: 'home'}">Home</router-link> | 
+        <router-link :to="{name: 'login'}">Login</router-link>
         
         {{-- Component matched by the route '/' will render here --}}
         <router-view></router-view>
