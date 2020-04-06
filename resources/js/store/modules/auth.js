@@ -1,36 +1,51 @@
-import axios from 'axios';
-import Cookies from 'js-cookie';
+import axios      from 'axios';
+import Cookies    from 'js-cookie';
 import * as types from '../mutations_types';
 
 // State
 const state = {
-    user: null,
-    token: Cookies.get("token")
+    user:     null,
+    token:    Cookies.get("token"),
+    auth_err: null,
+    loading:  false
 }
 
 // Getters
 const getters = {
-    user: state => state.user,
-    token: state => state.token,
-    check: state => state.user != null
+    user:      state => state.user,
+    token:     state => state.token,
+    check:     state => state.user != null,
+    authError: state => state.auth_err,
+    isLoading: state => state.loading
 }
 
 // Mutations
 const mutations = {
-    [types.SAVE_TOKEN] ( state, { token, remember } ) {
-        state.token = token;
+    [types.LOGIN] (state) {
+        state.loading  = true,
+        state.auth_err = null
+    },
+    [types.LOGIN_SUCCESS] ( state, { token, remember } ) {
+        state.loading  = false, // hide loading spinner
+        state.auth_err = null,  // no authentication errors
+        state.token    = token, // get token
+        // Save token in cookies
         // token expires in 365 days if remeber_me is checked
-        Cookies.set("tpken", token, { expires: remember ? 365 : null })
+        Cookies.set("token", token, { expires: remember ? 365 : null })
+    },
+    [types.LOGIN_FAILURE] ( state, { error } ) {
+        state.loading  = false, // hide loading spinner
+        state.auth_err = error  // get authentication errors
     },
     [types.FETCH_USER_SUCCESS] (state, { user } ) {
-        state.user = user.data;
+        state.user = user.data; // Get user data
     },
     [types.FETCH_USER_FAILURE] (state) {
         state.token = null;
-        Cookies.remove("token");
+        Cookies.remove("token"); // remove token from cookies
     },
     [types.LOGOUT] (state) {
-        state.user = null;
+        state.user  = null;
         state.token = null;
         Cookies.remove("token");
     }
@@ -39,8 +54,8 @@ const mutations = {
 
 // Actions
 const actions = {
-    saveToken ( {commit}, payload) {
-        commit(types.SAVE_TOKEN, payload);
+    login ( {commit} ) {
+        commit(types.LOGIN); // execute the mutation LOGIN
     },
     async fetchUser ( {commit} ) {
 

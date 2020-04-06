@@ -11512,6 +11512,69 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -14023,116 +14086,158 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass:
-        "container border w-3/4 mt-12 border-gray-300 p-6 mx-auto flex content-center font-sans shadow-2xl"
-    },
-    [
-      _c("div", { staticClass: "w-2/5 border border-gray-400" }, [
-        _c("img", {
-          staticClass: "w-full mx-auto",
-          attrs: { src: _vm.imgForm, alt: "image for login" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-center w-3/5 border border-gray-400" }, [
-        _c("h1", { staticClass: "text-5xl font-bold text-mainColor" }, [
-          _vm._v("Sign in to Account")
+  return _c("div", { staticClass: "gel3ah" }, [
+    _c(
+      "div",
+      {
+        staticClass:
+          "container border w-3/4 mt-12 border-gray-300 p-6 mx-auto flex content-center font-sans shadow-2xl"
+      },
+      [
+        _c("div", { staticClass: "w-2/5 border border-gray-400" }, [
+          _c("img", {
+            staticClass: "w-full mx-auto",
+            attrs: { src: _vm.imgForm, alt: "image for login" }
+          })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "mt-2" }, [
-          _c("div", { staticClass: "text-3xl text-gray-700" }, [
-            _vm._v("Welcome Back!")
+        _c("div", { staticClass: "text-center w-3/5 border border-gray-400" }, [
+          _c("h1", { staticClass: "text-5xl font-bold text-mainColor" }, [
+            _vm._v("Sign in to Account")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "text-xl text-gray-700" }, [
-            _vm._v(
-              "Fill your personal information and start your journey with us."
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              staticClass: "mt-5 mb-5 px-5",
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.login($event)
-                },
-                keydown: function($event) {
-                  return _vm.form.onKeydown($event)
+          _c("div", { staticClass: "mt-2" }, [
+            _c("div", { staticClass: "text-3xl text-gray-700" }, [
+              _vm._v("Welcome Back!")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-xl text-gray-700" }, [
+              _vm._v(
+                "Fill your personal information and start your journey with us."
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                staticClass: "mt-5 mb-5 px-5",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.login($event)
+                  },
+                  keydown: function($event) {
+                    return _vm.form.onKeydown($event)
+                  }
                 }
-              }
+              },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.email,
+                      expression: "form.email"
+                    }
+                  ],
+                  staticClass:
+                    "w-full border mb-3 p-4 border-gray-400 outline-none block",
+                  attrs: {
+                    placeholder: "Enter your email",
+                    name: "email",
+                    type: "email"
+                  },
+                  domProps: { value: _vm.form.email },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "email", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.password,
+                      expression: "form.password"
+                    }
+                  ],
+                  staticClass:
+                    "w-full border p-4 border-gray-400 outline-none block",
+                  attrs: {
+                    placeholder: "Enter your password",
+                    name: "password",
+                    type: "password"
+                  },
+                  domProps: { value: _vm.form.password },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "password", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(0)
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2)
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "bg-mainColor h-screen w-screen" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0"
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0",
+              staticStyle: { height: "500px" }
             },
             [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.email,
-                    expression: "form.email"
+              _c(
+                "div",
+                {
+                  staticClass: "hidden md:block md:w-1/2 rounded-r-lg m-auto",
+                  staticStyle: {
+                    "background-size": "cover",
+                    "background-position": "center center"
                   }
-                ],
-                staticClass:
-                  "w-full border mb-3 p-4 border-gray-400 outline-none block",
-                attrs: {
-                  placeholder: "Enter your email",
-                  name: "email",
-                  type: "email"
                 },
-                domProps: { value: _vm.form.email },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "email", $event.target.value)
-                  }
-                }
-              }),
+                [
+                  _c("img", {
+                    staticClass: "px-5",
+                    attrs: { src: _vm.imgForm, alt: "image for login" }
+                  })
+                ]
+              ),
               _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.password,
-                    expression: "form.password"
-                  }
-                ],
-                staticClass:
-                  "w-full border p-4 border-gray-400 outline-none block",
-                attrs: {
-                  placeholder: "Enter your password",
-                  name: "password",
-                  type: "password"
-                },
-                domProps: { value: _vm.form.password },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "password", $event.target.value)
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _vm._m(0)
+              _vm._m(3)
             ]
-          ),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _vm._m(2)
-        ])
-      ])
-    ]
-  )
+          )
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -14200,6 +14305,161 @@ var staticRenderFns = [
         },
         [_vm._v("create an account")]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex flex-col w-full md:w-1/2 p-4" }, [
+      _c("div", { staticClass: "flex flex-col flex-1 justify-center mb-8" }, [
+        _c("h1", { staticClass: "text-4xl text-center font-thin" }, [
+          _vm._v("Welcome Back")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-full mt-4" }, [
+          _c(
+            "form",
+            {
+              staticClass: "form-horizontal w-3/4 mx-auto",
+              attrs: { method: "POST", action: "#" }
+            },
+            [
+              _c("div", { staticClass: "flex flex-col mt-4" }, [
+                _c("input", {
+                  staticClass:
+                    "flex-grow h-8 px-2 border rounded border-grey-400",
+                  attrs: {
+                    id: "email",
+                    type: "text",
+                    name: "email",
+                    value: "",
+                    placeholder: "Email"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-col mt-4" }, [
+                _c("input", {
+                  staticClass:
+                    "flex-grow h-8 px-2 rounded border border-grey-400",
+                  attrs: {
+                    id: "password",
+                    type: "password",
+                    name: "password",
+                    required: "",
+                    placeholder: "Password"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex items-center mt-4" }, [
+                _c("input", {
+                  staticClass: "mr-2",
+                  attrs: { type: "checkbox", name: "remember", id: "remember" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "text-sm text-grey-dark",
+                    attrs: { for: "remember" }
+                  },
+                  [_vm._v("Remember Me")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-col mt-8" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded",
+                    attrs: { type: "submit" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                                    Login\n                                "
+                    )
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center mt-4" }, [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "no-underline hover:underline text-blue-dark text-xs",
+                attrs: { href: "#" }
+              },
+              [
+                _vm._v(
+                  "\n                                Forgot Your Password?\n                            "
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mt-4", staticStyle: { "padding-left": "3.4rem" } },
+            [
+              _c("hr", {
+                staticStyle: {
+                  width: "80px",
+                  height: "5px",
+                  display: "inline-block"
+                }
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "text-gray-700" }, [_vm._v(" OR ")]),
+              _vm._v(" "),
+              _c("hr", {
+                staticStyle: {
+                  width: "80px",
+                  height: "5px",
+                  display: "inline-block"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex flex-col mt-4 mx-10" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "bg-githubColor hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded",
+                attrs: { type: "submit" }
+              },
+              [
+                _vm._v(
+                  "\n                                Login with Github\n                            "
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex flex-col mt-2 mx-10" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "bg-facebookColor hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded",
+                attrs: { type: "submit" }
+              },
+              [
+                _vm._v(
+                  "\n                                Login with Facebook\n                            "
+                )
+              ]
+            )
+          ])
+        ])
+      ])
     ])
   }
 ]
