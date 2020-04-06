@@ -6,6 +6,7 @@ Forum website made using Laravel 7
 - [VueJs](https://vuejs.org/v2/guide/) the javascript framework choosed for the frontend
 - [Vuex](https://vuex.vuejs.org/) & [Vue Router](https://router.vuejs.org/) for making the project a Single Page Application (SPA)
 - [vform](https://github.com/cretueusebiu/vform) to handle Laravel back-end validation in Vue
+- [vue-spinner](https://github.com/greyby/vue-spinner) vuejs ready to use loading spinners
 - [jwt-auth](https://github.com/tymondesigns/jwt-auth) Authentication system
 - [js-cookie](https://github.com/js-cookie/js-cookie) for saving the user authentication token in cookies
 - [Laravel](https://laravel.com/) Php framework used for backend
