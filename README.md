@@ -2,7 +2,8 @@
 Forum website made using Laravel 7
 
 ## Tools & Languages
-- [tailwindcss](https://github.com/laravel-frontend-presets/tailwindcss) as css lybrary instead of Bootstrap
+- [tailwindcss](https://github.com/laravel-frontend-presets/tailwindcss) a utility-first CSS framework for
+rapidly building custom designs.
 - [VueJs](https://vuejs.org/v2/guide/) the javascript framework choosed for the frontend
 - [Vuex](https://vuex.vuejs.org/) & [Vue Router](https://router.vuejs.org/) for making the project a Single Page Application (SPA)
 - [vform](https://github.com/cretueusebiu/vform) to handle Laravel back-end validation in Vue
