@@ -1,4 +1,4 @@
-import Vue from 'Vue';
+import Vue  from 'Vue';
 import Vuex from 'Vuex';
 import auth from './modules/auth';
 
