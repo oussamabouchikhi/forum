@@ -14,14 +14,16 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    
+     
     {{-- This div will be replaced with the Vue instance --}}
     <div id="app">
         <!-- use router-link component for navigation. -->
         <!-- specify the link by passing the `to` prop. -->
         <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+        <router-link :to="{name: 'welcome'}">Dashboard</router-link> | 
         <router-link :to="{name: 'home'}">Home</router-link> | 
         <router-link :to="{name: 'login'}">Login</router-link>
+        <router-link :to="{name: 'register'}">Register</router-link>
         
         {{-- Component matched by the route '/' will render here --}}
         <router-view></router-view>
