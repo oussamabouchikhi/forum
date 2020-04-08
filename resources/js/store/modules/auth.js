@@ -7,14 +7,15 @@ const state = {
     user:     null,
     token:    Cookies.get("token"),
     auth_err: null,
-    loading:  false
+    loading:  false,
+    isLogged: false
 }
 
 // Getters
 const getters = {
     user:      state => state.user,
     token:     state => state.token,
-    check:     state => state.user != null,
+    check:     state => state.isLogged,
     authError: state => state.auth_err,
     isLoading: state => state.loading
 }
@@ -22,31 +23,37 @@ const getters = {
 // Mutations
 const mutations = {
     [types.LOGIN] (state) {
-        state.loading  = true,
-        state.auth_err = null
+        state.loading  = true;
+        state.auth_err = null;
+        state.isLogged = false;
     },
     [types.LOGIN_SUCCESS] ( state, { token, remember } ) {
-        state.loading  = false, // hide loading spinner
-        state.auth_err = null,  // no authentication errors
-        state.token    = token, // get token
+        state.loading  = false; // hide loading spinner
+        state.auth_err = null;  // no authentication errors
+        state.token    = token; // get token
+        state.isLogged = true;
         // Save token in cookies
         // token expires in 365 days if remeber_me is checked
-        Cookies.set("token", token, { expires: remember ? 365 : null })
+        Cookies.set("token", token, { expires: remember ? 365 : null });
     },
     [types.LOGIN_FAILURE] ( state, { error } ) {
-        state.loading  = false, // hide loading spinner
-        state.auth_err = error  // get authentication errors
+        state.loading  = false; // hide loading spinner
+        state.auth_err = error;  // get authentication errors
+        state.isLogged = false;
     },
     [types.FETCH_USER_SUCCESS] (state, { user } ) {
-        state.user = user.data; // Get user data
+        state.user     = user.data; // Get user data
+        state.isLogged = true;
     },
     [types.FETCH_USER_FAILURE] (state) {
-        state.token = null;
+        state.token    = null;
+        state.isLogged = false;
         Cookies.remove("token"); // remove token from cookies
     },
     [types.LOGOUT] (state) {
-        state.user  = null;
-        state.token = null;
+        state.user     = null;
+        state.token    = null;
+        state.isLogged = false;
         Cookies.remove("token");
     }
 };
