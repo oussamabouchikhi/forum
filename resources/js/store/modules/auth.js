@@ -1,6 +1,6 @@
-import axios      from 'axios';
-import Cookies    from 'js-cookie';
-import * as types from '../mutations_types';
+import axios      from "axios";
+import Cookies    from "js-cookie";
+import * as types from "../mutations_types";
 
 // State
 const state = {
@@ -10,6 +10,7 @@ const state = {
     loading:  false,
     isLogged: false
 }
+
 
 // Getters
 const getters = {

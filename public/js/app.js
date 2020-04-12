@@ -11825,6 +11825,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('pulse-loader', vue_spinner
   data: function data() {
     return {
       form: new vform__WEBPACK_IMPORTED_MODULE_1__["Form"]({
+        name: '',
         email: '',
         password: '',
         password_confirmation: ''
@@ -11846,7 +11847,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('pulse-loader', vue_spinner
         }); // redirect to login page
 
       })["catch"](function (error) {
-        console.log(error);
+        console.log(error.response.data);
       });
     }
   },
@@ -11870,7 +11871,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.is-invalid[data-v-42c42d6a] {\n    border: apx solid #ff3949;\n}\n\n", ""]);
+exports.push([module.i, "\n.is-invalid[data-v-42c42d6a] {\n    border: 1px solid #ff3949;\n}\n\n", ""]);
 
 // exports
 
@@ -11889,7 +11890,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.is-invalid[data-v-2ebeb09e] {\n    border: apx solid #ff3949;\n}\n\n", ""]);
+exports.push([module.i, "\n.is-invalid[data-v-2ebeb09e] {\n    border: 1px solid #ff3949;\n}\n\n", ""]);
 
 // exports
 
@@ -32157,7 +32158,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '#app',
+  el: "#app",
   router: _routes_index__WEBPACK_IMPORTED_MODULE_1__["default"],
   store: _store_index__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
@@ -32246,20 +32247,20 @@ __webpack_require__.r(__webpack_exports__);
 /** 
  * Login user automatically if he has logged in before (already exist in database)
  */
-function checkAuth(_ref, store) {
-  var next = _ref.next;
-  console.log('checkAuth middleware running'); // If the user is not logged in & there is a token stored in cookies
+function checkAuth(_ref) {
+  var next = _ref.next,
+      store = _ref.store;
+  console.log("check-auth middleware run ...");
 
-  if (!store.getters['auth/check'] && store.getters['auth/token']) {
-    store.dispatch('auth/fetchUser'); // Fech user by token
+  if (!store.getters["auth/check"] && store.getters["auth/token"]) {
+    store.dispatch("auth/fetchUser"); // Fech user by token
 
     return next();
-  } else if (store.getters['auth/check'] && store.getters['auth/token']) {
-    // If the user logged in & there is a token stored in cookies
+  } else if (store.getters["auth/check"] && store.getters["auth/token"]) {
     return next(); // continue request (go to dashboard)
   } else {
     return next({
-      name: 'login'
+      name: "login"
     }); // redirect user to login page
   }
 }
@@ -32277,12 +32278,13 @@ function checkAuth(_ref, store) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return auth; });
 /** Dashboard Middleware (only authenticated users have access to dashboard) */
-function auth(_ref, store) {
-  var next = _ref.next;
-  console.log('auth middleware running'); // If the user is not logged in
+function auth(_ref) {
+  var next = _ref.next,
+      store = _ref.store;
+  console.log("auth middlware run ..."); // If the user is not logged in
 
-  if (!store.getters['auth/check']) return next({
-    name: 'login'
+  if (!store.getters["auth/check"]) return next({
+    name: "login"
   }); // redirect user to login page
   else return next(); // continue request (go to dashboard)
 }
@@ -32300,15 +32302,19 @@ function auth(_ref, store) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return guest; });
 /** None Authenticated users */
-function guest(_ref, store) {
-  var next = _ref.next;
+function guest(_ref) {
+  var next = _ref.next,
+      store = _ref.store;
   console.log('guest middleware running');
   console.log('store: ' + store); // If there is a token
 
-  if (store.getters['auth/token']) return next({
-    name: 'home'
-  }); // redirect user to home
-  else return next(); // continue request
+  if (store.getters["auth/token"]) {
+    return next({
+      name: "home"
+    }); // redirect user to home
+  } else {
+    return next(); // continue request
+  }
 }
 
 /***/ }),

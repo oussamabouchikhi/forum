@@ -122,6 +122,7 @@ export default {
     data() {
         return {
             form: new Form({
+                name:     '',
                 email:    '',
                 password: '',
                 password_confirmation: ''
@@ -138,7 +139,7 @@ export default {
                     this.$router.push({ name: 'login' });    // redirect to login page
                 })
                 .catch( (error) => {
-                    console.log(error);
+                    console.log(error.response.data);
                     
                 } )
 
@@ -157,7 +158,7 @@ export default {
 <style scoped>
 
     .is-invalid {
-        border: apx solid #ff3949;
+        border: 1px solid #ff3949;
     }
 
 </style>

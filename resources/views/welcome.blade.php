@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    {{-- Font awesome --}}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
      
@@ -20,10 +23,10 @@
         <!-- use router-link component for navigation. -->
         <!-- specify the link by passing the `to` prop. -->
         <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
-        <router-link :to="{name: 'welcome'}">Dashboard</router-link> | 
-        <router-link :to="{name: 'home'}">Home</router-link> | 
-        <router-link :to="{name: 'login'}">Login</router-link>
-        <router-link :to="{name: 'register'}">Register</router-link>
+            <router-link :to="{name: 'welcome'}">Home</router-link>
+            <router-link :to="{name: 'home'}">Dashboard</router-link>
+            <router-link :to="{name: 'login'}">login</router-link>
+            <router-link :to="{name: 'register'}">register</router-link>
         
         {{-- Component matched by the route '/' will render here --}}
         <router-view></router-view>

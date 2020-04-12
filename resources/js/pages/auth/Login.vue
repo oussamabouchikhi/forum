@@ -164,7 +164,7 @@ export default {
 <style scoped>
 
     .is-invalid {
-        border: apx solid #ff3949;
+        border: 1px solid #ff3949;
     }
 
 </style>
