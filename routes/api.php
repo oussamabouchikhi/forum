@@ -47,4 +47,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'API'], function ($router) {
      */
     Route::apiResource('channels', 'ChannelsController');
 
+
+    Route::apiResource('discussions', 'DiscussionController');
+
 });
