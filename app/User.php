@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 use App\SocialAccount;
+use App\Discussion;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -65,5 +66,13 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    /**
+     * One To Many relationship between User & Discussions
+     */
+    public function discussions() {
+        # This user has many discussions
+        return $this->hasMany(Discussion::class);
     }
 }
