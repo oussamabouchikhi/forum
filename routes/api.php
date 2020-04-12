@@ -41,4 +41,10 @@ Route::group(['prefix' => 'v1', 'namespace' => 'API'], function ($router) {
        
     });
 
+    /**
+     * apiResource: index, store, show, update, destroy
+     * resource: apiResource methods + create & edit
+     */
+    Route::apiResource('channels', 'ChannelsController');
+
 });
