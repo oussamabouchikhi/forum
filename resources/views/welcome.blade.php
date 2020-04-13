@@ -13,6 +13,9 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
+    {{-- Fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght:400;700|Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     {{-- Font awesome --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>

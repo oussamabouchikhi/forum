@@ -5,6 +5,9 @@ module.exports = {
         mainColor: "#008EFF",
         githubColor: "#333333",
         facebookColor: "#3B5998"
+      },
+      fontFamily: {
+        sans: ['Ubuntu', 'Montserrat']
       }
     }
   },
