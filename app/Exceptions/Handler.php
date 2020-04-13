@@ -5,6 +5,8 @@ namespace App\Exceptions;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
+use Illuminate\Database\Eloquent\ModelNotFoundEception;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -50,6 +52,15 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        // To override 404 pages
+        if ( $exception instanceof ModelNotFoundEception ) {
+            // ex: Entry for Channel not found
+            return response()->json([
+                // Replace App\\Model with Model
+                'error' => 'Entry for ' . str_replace('App\\', '', 
+                $exception->getModel()), ' not found'
+            ], 404);
+        }
         return parent::render($request, $exception);
     }
 }
