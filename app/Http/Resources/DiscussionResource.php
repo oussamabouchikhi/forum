@@ -15,12 +15,17 @@ class DiscussionResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'         => $this->id,
-            'title'      => $this->title,
-            'content'    => $this->content,
-            'user_id'    => $this->user_id,
-            'channel_id' => $this->channel_id,
-            'slug'       => $this->slug
+            "id" => $this->id,
+            "title" => $this->title,
+            "content" => $this->content,
+            "user" => $this->user,
+            "channel" => $this->channel,
+            "slug" => $this->slug,
+            "replies" => ReplyResource::collection($this->replies) ,
+            "replies_count" => $this->replies->count(),
+            "created_at" => $this->created_at,
+            "updated_at" => $this->updated_at,
+            "published_at" => $this->created_at->diffForHumans()
         ];
     }
 }

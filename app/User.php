@@ -2,12 +2,10 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
-
 use Tymon\JWTAuth\Contracts\JWTSubject;
-
 use App\SocialAccount;
 use App\Discussion;
 
@@ -42,37 +40,21 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
-    public function accounts()
-    {
-        # This user has many social media acounts
+    public function accounts() {
         return $this->hasMany(SocialAccount::class);
     }
 
-    /**
-     * Get the identifier that will be stored in the subject claim of the JWT.
-     *
-     * @return mixed
-     */
     public function getJWTIdentifier()
     {
         return $this->getKey();
     }
 
-    /**
-     * Return a key value array, containing any custom claims to be added to the JWT.
-     *
-     * @return array
-     */
     public function getJWTCustomClaims()
     {
         return [];
     }
 
-    /**
-     * One To Many relationship between User & Discussions
-     */
     public function discussions() {
-        # This user has many discussions
         return $this->hasMany(Discussion::class);
     }
 }

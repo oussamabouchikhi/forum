@@ -2,10 +2,9 @@
 
 namespace App\Exceptions;
 
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Throwable;
-
-use Illuminate\Database\Eloquent\ModelNotFoundEception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class Handler extends ExceptionHandler
 {
@@ -31,12 +30,12 @@ class Handler extends ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param  \Throwable  $exception
+     * @param  \Exception  $exception
      * @return void
      *
      * @throws \Exception
      */
-    public function report(Throwable $exception)
+    public function report(Exception $exception)
     {
         parent::report($exception);
     }
@@ -45,21 +44,16 @@ class Handler extends ExceptionHandler
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Throwable  $exception
+     * @param  \Exception  $exception
      * @return \Symfony\Component\HttpFoundation\Response
      *
-     * @throws \Throwable
+     * @throws \Exception
      */
-    public function render($request, Throwable $exception)
+    public function render($request, Exception $exception)
     {
-        // To override 404 pages
-        if ( $exception instanceof ModelNotFoundEception ) {
-            // ex: Entry for Channel not found
+        if ($exception instanceof ModelNotFoundException) {
             return response()->json([
-                // Replace App\\Model with Model
-                'error' => 'Entry for ' . str_replace('App\\', '', 
-                $exception->getModel()), ' not found'
-            ], 404);
+                'error' => 'Entry for '.str_replace('App\\', '', $exception->getModel()).' not found'], 404);
         }
         return parent::render($request, $exception);
     }

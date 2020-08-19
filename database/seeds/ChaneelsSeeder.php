@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Channel;
 
-class ChannelsSeeder extends Seeder
+class ChaneelsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,18 +12,17 @@ class ChannelsSeeder extends Seeder
      */
     public function run()
     {
-        
         Channel::create([
-            'title' => 'Laravel'
+            'title' => 'Laravel 6'
         ]);
         Channel::create([
-            'title' => 'Javascript'
+            'title' => 'Vue.js'
+        ]);
+        Channel::create([
+            'title' => 'React.js'
         ]);
         Channel::create([
             'title' => 'Python'
-        ]);
-        Channel::create([
-            'title' => 'Flutter'
         ]);
     }
 }

@@ -11,47 +11,39 @@ use Validator;
 class ChannelController extends Controller
 {
     /**
-     * Display a listing of the Channel.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // method1
-        // return response()->json([
-        //     'error' => false,
-        //     'channels' => Channel::all()
-        // ], 200);
-        // method2
         return ChannelResource::collection(Channel::all());
+        // return response()->json([
+        //     "error" => false,
+        //     "channels" => Channel::all()
+        // ],200);
     }
 
     /**
-     * Store a newly created Channel in storage.
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        // Make validation
         $v = Validator::make($request->all(), [
-            'title' => 'required|unique:channels'
+            "title" => "required|unique:channels"
         ]);
 
-        // If validation fails
-        if ( $v->fails() ) {
-
+        if ($v->fails()) {
             return response()->json([
-                'error' => true,
-                'errors' => $v->errors()
-            ], 422);
+                "error" => true,
+                "errors" => $v->errors()
+            ],422);
         }
 
-        // Create channel
-        $channel = new Channel([
-            'title' => $request->title
-        ]);
+        $channel = new Channel(["title" => $request->title]);
         $channel->save();
 
         return new ChannelResource($channel);
@@ -65,7 +57,6 @@ class ChannelController extends Controller
      */
     public function show(Channel $channel)
     {
-        //
         return new ChannelResource($channel);
     }
 
@@ -78,22 +69,18 @@ class ChannelController extends Controller
      */
     public function update(Request $request, Channel $channel)
     {
-        // Make validation
         $v = Validator::make($request->all(), [
-            'title' => 'required|unique:channels'
+            "title" => "required|unique:channels"
         ]);
 
-        // If validation fails
-        if ( $v->fails() ) {
-
+        if ($v->fails()) {
             return response()->json([
-                'error' => true,
-                'errors' => $v->errors()
-            ], 422);
+                "error" => true,
+                "errors" => $v->errors()
+            ],422);
         }
 
-        // Update & save channel title
-        $channel->title = $resuest->title;
+        $channel->title = $request->title;
         $channel->save();
 
         return new ChannelResource($channel);
@@ -107,13 +94,12 @@ class ChannelController extends Controller
      */
     public function destroy(Channel $channel)
     {
-        // Delete channel
         $channel->delete();
 
-        // return response()->json(null, 204); #method 1
+        // return response()->json(null,204);
         return response()->json([
-            'error'   => false,
-            'message' => 'The channel $channel->title was successfully deleted'
-        ], 200);
+            "error" => false,
+            "message" => "the channel with id: $channel->id successfully been deleted."
+        ],200);
     }
 }

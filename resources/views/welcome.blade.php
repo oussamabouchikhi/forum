@@ -11,32 +11,22 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    {{-- Fonts --}}
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght:400;700|Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900|Ubuntu:300,400,700" rel="stylesheet">
 
-    {{-- Font awesome --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-     
-    {{-- This div will be replaced with the Vue instance --}}
     <div id="app">
-        <!-- use router-link component for navigation. -->
-        <!-- specify the link by passing the `to` prop. -->
-        <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
-            <router-link :to="{name: 'welcome'}">Home</router-link>
-            <router-link :to="{name: 'home'}">Dashboard</router-link>
-            <router-link :to="{name: 'login'}">login</router-link>
-            <router-link :to="{name: 'register'}">register</router-link>
-        
-        {{-- Component matched by the route '/' will render here --}}
+        <router-link :to="{name: 'welcome'}">Home</router-link>
+        <router-link :to="{name: 'home'}">Dashboard</router-link>
+        <router-link :to="{name: 'login'}">login</router-link>
+        <router-link :to="{name: 'register'}">register</router-link>
         <router-view></router-view>
-        
     </div>
-    
 
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

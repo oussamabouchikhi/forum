@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1> Welcome To Forum</h1>
+        <h1>:: Welcome to algorum ::</h1>
     </div>
 </template>

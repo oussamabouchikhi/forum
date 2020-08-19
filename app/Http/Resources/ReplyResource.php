@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ChannelResource extends JsonResource
+class ReplyResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,11 @@ class ChannelResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            "id" => $this->id,
-            "title" => $this->title,
-            "created_at" => $this->created_at,
-            "updated_at" => $this->updated_at
-        ];
+      return [
+        "id" => $this->id,
+        "content" => $this->content,
+        "user" => $this->user->name,
+        "published_at" => $this->created_at->diffForHumans()
+      ];
     }
 }

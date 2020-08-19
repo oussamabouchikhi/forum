@@ -7,11 +7,9 @@ use App\Discussion;
 
 class Channel extends Model
 {
-    protected $fillable = ['title'];
+    protected $fillable = ["title"];
 
     public function discussions() {
-        # This channel has many discussions
         return $this->hasMany(Discussion::class);
     }
-
 }

@@ -1,9 +1,5 @@
-/** Dashboard Middleware (only authenticated users have access to dashboard) */
-
 export default function auth({next, store}) {
     console.log("auth middlware run ...")
-
-    // If the user is not logged in
-    if ( !store.getters["auth/check"] ) return next({ name: "login"}) // redirect user to login page
-    else return next(); // continue request (go to dashboard)
+    if (!store.getters["auth/check"]) return next({ name: "login"})
+    else return next();
 }

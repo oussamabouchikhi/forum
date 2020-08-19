@@ -7,96 +7,91 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Discussion;
 use Validator;
+use Illuminate\Support\Str;
+
 
 class DiscussionController extends Controller
 {
     /**
-     * Display a listing of the Discussion.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // return all discussions
-        return DiscussionResource::collecrion(Discussion::all());
+        return DiscussionResource::collection(Discussion::all());
     }
 
     /**
-     * Store a newly created Discussion in storage.
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        // Make validation
         $v = Validator::make($request->all(), [
-            'title' => 'required|unique:discussions',
-            'content' => 'required'
+            "title" => "required|unique:discussions",
+            "content" => "required"
         ]);
 
-        // If validation fails
-        if ( $v->fails() ) {
-
+        if ($v->fails()) {
             return response()->json([
-                'error' => true,
-                'errors' => $v->errors()
-            ], 422);
+                "error" => true,
+                "errors" => $v->errors()
+            ],422);
         }
 
-
         $discussion = new Discussion([
-            'title'      => $request->title,
-            'content'    => $request->content,
-            'slug'       => $request->slug,
-            'user_id'    => $request->user_id,
-            'channel_id' => $request->channel_id
+            "title" => $request->title,
+            "content" => $request->content,
+            "slug" => Str::slug($request->title, "-"),
+            "user_id" => $request->user_id,
+            "channel_id" => $request->channel_id
         ]);
+
         $discussion->save();
 
         return new DiscussionResource($discussion);
-
     }
 
     /**
-     * Display the specified Discussion.
+     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Discussion $discussion)
+    public function show($slug)
     {
-        return new DiscussionResource($discussion);
+      $discussion = Discussion::whereSlug($slug)->firstOrFail();
+      return new DiscussionResource($discussion);
     }
 
     /**
-     * Update the specified Discussion in storage.
+     * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Discussion $discussion)
+    public function update(Request $request,Discussion $discussion)
     {
-        // Make validation
         $v = Validator::make($request->all(), [
-            'title' => 'required|unique:discussions',
-            'content' => 'required'
+            "title" => "required|unique:discussions",
+            "content" => "required"
         ]);
 
-        // If validation fails
-        if ( $v->fails() ) {
-
+        if ($v->fails()) {
             return response()->json([
-                'error' => true,
-                'errors' => $v->errors()
-            ], 422);
+                "error" => true,
+                "errors" => $v->errors()
+            ],422);
         }
 
-        $discussion->title         = $request->title;
-        $discussion->content       = $request->content;
-        $discussion->channel_id    = $request->channel_id;
-        $discussion->slug          = $request->slug;
+        $discussion->title = $request->title;
+        $discussion->content = $request->content;
+        $discussion->slug = Str::slug($request->title, "-");
+        $discussion->channel_id = $request->channel_id;
 
         $discussion->save();
 
@@ -104,7 +99,7 @@ class DiscussionController extends Controller
     }
 
     /**
-     * Remove the specified Discussion from storage.
+     * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -112,6 +107,7 @@ class DiscussionController extends Controller
     public function destroy(Discussion $discussion)
     {
         $discussion->delete();
+
         return response()->json(null, 204);
     }
 }
