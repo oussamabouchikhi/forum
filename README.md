@@ -1,11 +1,41 @@
-# Forum
-Forum website made using Laravel 7
+# Forum 🎯
+Forum website made using Laravel & VueJs
 
-## Tools & Languages
+## Features 🔥
+✔️ Authentication with Github & Facebook
+✔️ Authentication with JWT
+✔️ SPA (Single Page Application) with vue-router
+✔️ Use Laravel with vueJs & Tailwindcss
+✔️ API
+✔️ State management with Vuex
+✔️ Notifications
+
+<details>
+<summary>Screenshots</summary>
+
+<img src='screenshots/login.png' alt='login' />
+<img src='screenshots/register.png' alt='register' />
+<img src='screenshots/discussions.png' alt='discussions' />
+<img src='screenshots/reply editor.png' alt='reply editor' />
+<img src='screenshots/model.png' alt='model' />
+<img src='screenshots/replies.png' alt='replies' />
+
+</details>
+
+## TODO 📝
+* [ ] Improve app design (I focused only on Laravel)
+* [ ] Implement sign out feature
+* [ ] Make navbar dynamic with user state
+* [ ] Improve auth middleware
+    - When user signup redirect to dashboard instead of login
+    - When user is already signein redirect automatically to dashboard
+
+## Tools & Languages 🛠️
 - [tailwindcss](https://github.com/laravel-frontend-presets/tailwindcss) a utility-first CSS framework for
 rapidly building custom designs.
 - [VueJs](https://vuejs.org/v2/guide/) the javascript framework choosed for the frontend
-- [Vuex](https://vuex.vuejs.org/) & [Vue Router](https://router.vuejs.org/) for making the project a Single Page Application (SPA)
+- [Vuex](https://vuex.vuejs.org/) for state management
+- [Vue Router](https://router.vuejs.org/) for routing & making our app a
 - [vform](https://github.com/cretueusebiu/vform) to handle Laravel back-end validation in Vue
 - [vue-js-modal](https://github.com/euvl/vue-js-modal) 🍕 Simple to use, highly customizable, mobile friendly Vue.js modal. 
 - [vue2-editor](https://github.com/davidroyer/vue2-editor) An easy-to-use but yet powerful and customizable rich text editor powered by Quill.js and Vue.js
@@ -15,7 +45,7 @@ rapidly building custom designs.
 - [Laravel](https://laravel.com/) Php framework used for backend
 - [VSCode](https://code.visualstudio.com/) as a text editor
 
-## Usage
+## Usage 📋
 
 ``` bash
 # 1. clone the repo
@@ -68,8 +98,8 @@ FACEBOOK_CALLBACK=http://localhost:8000/login/facebook/callback
 ]
 ```
 
-## Contributing
+## Contributing 💡
 Pull requests are welcome, feel free to ```fork``` this repo.
 
-## License
-This project is open sourced unde the [MIT](https://opensource.org/licenses/MIT) license.
+## License 📄
+This project is open sourced unde the [MIT license](https://opensource.org/licenses/MIT).
