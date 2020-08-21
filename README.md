@@ -2,13 +2,13 @@
 Forum website made using Laravel & VueJs
 
 ## Features 🔥
-✔️ Authentication with Github & Facebook
-✔️ Authentication with JWT
-✔️ SPA (Single Page Application) with vue-router
-✔️ Use Laravel with vueJs & Tailwindcss
-✔️ API
-✔️ State management with Vuex
-✔️ Notifications
+✔️ Authentication with Github & Facebook <br />
+✔️ Authentication with JWT <br />
+✔️ SPA (Single Page Application) with vue-router <br />
+✔️ Use Laravel with vueJs & Tailwindcss <br />
+✔️ API <br />
+✔️ State management with Vuex <br />
+✔️ Notifications <br />
 
 <details>
 <summary>Screenshots</summary>
