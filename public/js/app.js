@@ -38587,8 +38587,8 @@ var LOGIN_FAILED = "LOGIN_FAILED";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\lenovo\Desktop\laravel6-tutorial-project3-master\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\lenovo\Desktop\laravel6-tutorial-project3-master\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! C:\Users\lenovo\Desktop\contrib\forum\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\lenovo\Desktop\contrib\forum\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })
